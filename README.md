@@ -3,7 +3,7 @@
 # Distracted Robot
 ### How Visual Clutter Undermine Robotic Manipulation
 
-**Preprint**
+**ICRA 2026**
 
 Amir Rasouli, Montgomery Alban, **Sajjad Pakdamansavoji**, Zhiyuan Li, Zhanguang Zhang, Aaron Wu, Xuan Zhao
 
@@ -68,11 +68,11 @@ pip install -r requirements.txt
 If you find this work useful, please cite:
 
 ```bibtex
-@article{rasouli2025distracted,
-  title   = {Distracted Robot: How Visual Clutter Undermine Robotic Manipulation},
-  author  = {Amir Rasouli and Montgomery Alban and Sajjad Pakdamansavoji and Zhiyuan Li and Zhanguang Zhang and Aaron Wu and Xuan Zhao},
-  journal = {arXiv preprint arXiv:2511.22780},
-  year    = {2025}
+@inproceedings{rasouli2026distracted,
+  title     = {Distracted Robot: How Visual Clutter Undermine Robotic Manipulation},
+  author    = {Amir Rasouli and Montgomery Alban and Sajjad Pakdamansavoji and Zhiyuan Li and Zhanguang Zhang and Aaron Wu and Xuan Zhao},
+  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+  year      = {2026}
 }
 ```
 

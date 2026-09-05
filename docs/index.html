@@ -41,6 +41,17 @@ h1{font-size:clamp(28px,4.4vw,42px);line-height:1.18;margin:0 0 10px;letter-spac
 .authors .me{font-weight:700}
 .affil{color:var(--muted);font-size:14.5px;margin:6px 0 0}
 .notes{color:var(--muted);font-size:13px;margin:8px 0 0}
+figure.fig{margin:0 0 34px}
+figure.fig:last-child{margin-bottom:0}
+.tbl-wrap{overflow-x:auto;margin:0 0 10px}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{padding:9px 14px;text-align:right;border-bottom:1px solid var(--rule);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{font-weight:600;color:var(--muted);font-size:12.5px;letter-spacing:.05em;
+  text-transform:uppercase;border-bottom:1.5px solid var(--fg)}
+tbody tr:last-child td{border-bottom:1.5px solid var(--fg)}
+.tbl-title{font-weight:600;font-size:15px;margin:0 0 12px}
+.tbl-note{color:var(--muted);font-size:13.5px;margin:8px 0 30px}
 .tldr{background:var(--tldr);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
   padding:18px 22px;margin:0;font-size:17.5px;line-height:1.6}
 ul.pts{margin:0;padding-left:22px}
@@ -90,7 +101,8 @@ a{color:var(--accent)}
     <a class="btn" href="https://github.com/SajjadPSavoji/Distracted-Robot">Code</a>
     <a class="btn" href="#bibtex">BibTeX</a>
   </div>
-  <figure class="teaser"><img src="static/teaser.png" alt="Distracted Robot teaser"></figure>
+  <figure class="teaser"><img src="static/teaser.png" alt="Distracted Robot overview">
+    <figcaption>A typical manipulation scenario. The green trajectory shows the expected behavior; distractors cause target confusion, collision, and grasping failure.</figcaption></figure>
 </div></header>
 <main class="wrap">
   <section>
@@ -106,19 +118,14 @@ a{color:var(--accent)}
     <ul class="pts"><li>A psychophysically motivated evaluation protocol using a unified clutter measure to characterize scenes populated with distractors.</li><li>Scene designs spanning diverse distractor types and quantities, including partial occlusion, while guaranteeing the target stays reachable without rearrangement.</li><li>Large-scale evaluation of five state-of-the-art VLA policies in the SIMPLER simulator and in a real-world environment.</li><li>Analysis showing the clutter measure functions as a predictor of expected policy performance.</li><li>A mitigation study finetuning a VLA policy on real-world distraction data.</li></ul>
   </section>
   <section>
-    <h2>Method</h2>
-    <figure>
-      <img src="static/method.png" alt="Method overview">
-      <figcaption>Overview of the proposed approach.</figcaption>
-    </figure>
+    <h2>Approach</h2>
+    <figure class="fig"><img src="static/approach1.png" alt="Synthetic (top) and real (bottom) cluttered scenes with thei"><figcaption>Synthetic (top) and real (bottom) cluttered scenes with their corresponding visual clutter (DvFC) values.</figcaption></figure>
   </section>
   <section>
     <h2>Results</h2>
-    <figure>
-      <img src="static/results.png" alt="Results">
-      <figcaption>Qualitative results and comparison against baselines.</figcaption>
-    </figure>
-    <ul class="pts res" style="margin-top:26px"><li>Visual clutter measurably degrades success across all five evaluated policies.</li><li>The clutter measure serves as an <strong>indicator of expected performance</strong> before deployment.</li><li>Finetuning on real-world distraction data reduces, but does not eliminate, the clutter penalty.</li></ul>
+    <ul class="pts res" style="margin-bottom:34px"><li>Visual clutter measurably degrades success across all five evaluated policies.</li><li>The clutter measure serves as an <strong>indicator of expected performance</strong> before deployment.</li><li>Finetuning on real-world distraction data reduces, but does not eliminate, the clutter penalty.</li></ul>
+    <p class="tbl-title">Average policy performance in cluttered scenes</p><div class="tbl-wrap"><table><thead><tr><th>Policy</th><th>SR<sub>base</sub></th><th>SR</th><th>SR<sub>no-occ</sub></th><th>Collision rate</th></tr></thead><tbody><tr><td>Octo</td><td>0.173</td><td>0.117</td><td>0.104</td><td>0.867</td></tr><tr><td>OpenVLA</td><td>0.533</td><td>0.262</td><td>0.170</td><td>0.590</td></tr><tr><td>SpatialVLA</td><td>0.587</td><td>0.240</td><td>0.169</td><td>0.684</td></tr><tr><td>π₀</td><td>0.711</td><td><b>0.470</b></td><td>0.346</td><td>0.840</td></tr></tbody></table></div><p class="tbl-note">SR<sub>base</sub> is success on uncluttered scenes. Every policy loses a large fraction of its success rate once distractors are introduced.</p>
+    <figure class="fig"><img src="static/result1.png" alt="Per-task success rate of the evaluated policies across the s"><figcaption>Per-task success rate of the evaluated policies across the six core manipulation tasks.</figcaption></figure><figure class="fig"><img src="static/result2.png" alt="(Left) Percentage of failures per policy, normalized to sum "><figcaption>(Left) Percentage of failures per policy, normalized to sum to one. (Right) Qualitative failure examples.</figcaption></figure><figure class="fig"><img src="static/result3.png" alt="Collision rate and grasp failure rate versus visual clutter "><figcaption>Collision rate and grasp failure rate versus visual clutter in real-world experiments.</figcaption></figure><figure class="fig"><img src="static/result4.png" alt="Comparison of a policy finetuned on base data versus distrac"><figcaption>Comparison of a policy finetuned on base data versus distractor data.</figcaption></figure>
   </section>
   <section id="bibtex">
     <h2>BibTeX</h2>

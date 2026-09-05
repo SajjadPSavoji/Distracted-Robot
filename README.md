@@ -57,7 +57,7 @@ pip install -r requirements.txt
 
 ## Results
 
-<img src="docs/static/results.png" width="100%">
+<img src="docs/static/result1.png" width="100%">
 
 - Visual clutter measurably degrades success across all five evaluated policies.
 - The clutter measure serves as an **indicator of expected performance** before deployment.
